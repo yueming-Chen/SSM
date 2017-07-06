@@ -1,0 +1,9 @@
+.content {
+  display: flex;
+  .section {
+    flex: 6;
+  }
+  .side {
+    flex: 1;
+  }
+}

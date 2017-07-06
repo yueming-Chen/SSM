@@ -1,0 +1,13 @@
+.icon
+  img(src="https://cdn4.iconfinder.com/data/icons/linecon/512/file-512.png")
+.item#home([class.selected]="contains('home')",(click)="tabClick($event)") 主頁
+.title 管理員
+.item#concert([class.selected]="contains('concert')",(click)="tabClick($event)") 音樂會管理
+.item#member([class.selected]="contains('member')",(click)="tabClick($event)") 成員管理
+.item#scoresheet([class.selected]="contains('scoresheet')",(click)="tabClick($event)") 樂譜管理
+.title 夥伴們
+.item#myscore([class.selected]="contains('myscore')",(click)="tabClick($event)") 樂譜來
+.item#mycalendar([class.selected]="contains('mycalendar')",(click)="tabClick($event)") 行事曆
+.item#myconcert([class.selected]="contains('myconcert')",(click)="tabClick($event)") 找檔期
+.title 設定
+.item#setting([class.selected]="contains('setting')",(click)="tabClick($event)") 改個資料

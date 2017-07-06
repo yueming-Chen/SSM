@@ -1,0 +1,41 @@
+@import './colours';
+ym-tab {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 0.4em;
+  background: $sky;
+  .icon {
+    padding: 0.5em;
+    img {
+      width: 4em;
+      height: 4em;
+    }
+  }
+  .title {
+    padding-top: 0.3em;
+    padding-left: 1em;
+    color: $black;
+    font-size: 0.7em;
+  }
+  .item {
+    font-size: 0.8em;
+    padding: 1em;
+    color: white;
+    transition: color ease-in 0.3s;
+    &:hover {
+      color: #333;
+    }
+    &.selected {
+      &:before {
+        left: 0%;
+        content: " ";
+        position: absolute;
+        background: white;
+        height: 2em;
+        width: 3px;
+      }
+    }
+  }
+}
