@@ -20,13 +20,58 @@
         height: 4px;
         width: 0.7em;
         margin-bottom: 7px;
+        margin-right: 0.5em;
       }
     }
   }
   .flex-1 {
     flex: 1;
   }
+  .flex-2 {
+    flex: 2;
+  }
   .flex-3 {
     flex: 3;
+  }
+}
+
+.List {
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  .item {
+    display: flex;
+    flex-direction: row;
+    padding: 0px 4px;
+    .dot-line {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 10px;
+      .dot {
+        width: 14px;
+        height: 14px;
+        background: black;
+        margin-bottom: 0px;
+        border-radius: 50%;
+      }
+      .line {
+        height: 20px;
+        width: 4px;
+        background: black;
+        &.first {
+          border-top-left-radius: 42%;
+          border-top-right-radius: 42%;
+        }
+        &.last {
+          border-bottom-left-radius: 42%;
+          border-bottom-right-radius: 42%;
+        }
+      }
+    }
+    .content {
+      display: flex;
+      align-items: center;
+    }
   }
 }
