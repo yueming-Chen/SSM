@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { TabComponent } from './tab/tab.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ToolService } from './tool.service';
 
 const routeConfig: Routes = [
   { path: 'home', component: HomeComponent, },
@@ -22,7 +23,7 @@ const routeConfig: Routes = [
     BrowserModule,
     RouterModule.forRoot(routeConfig)
   ],
-  providers: [],
+  providers: [ToolService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

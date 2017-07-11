@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { ToolService } from './tool.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.pug',
@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  constructor(private toolService: ToolService) { }
+  // @HostListener('window:resize', ['$event'])
+
 }

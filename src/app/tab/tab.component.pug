@@ -1,6 +1,6 @@
 .icon
   img(src="https://cdn4.iconfinder.com/data/icons/linecon/512/file-512.png")
-.item#home([class.selected]="contains('home')",(click)="tabClick($event)") 主頁
+.item#home([class.selected]="contains('home')",(click)="tabClick($event)",routerLinkActive="active", routerLink="home") 主頁
 .title 管理員
 .item#concert([class.selected]="contains('concert')",(click)="tabClick($event)") 音樂會管理
 .item#member([class.selected]="contains('member')",(click)="tabClick($event)") 成員管理
