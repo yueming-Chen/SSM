@@ -8,6 +8,9 @@ import { ToolService } from './tool.service';
 export class AppComponent {
   title = 'app';
   constructor(private toolService: ToolService) { }
-  // @HostListener('window:resize', ['$event'])
+
+  onResize(event) {
+    console.log('innerHeight', event.target.innerHeight);
+  }
 
 }
