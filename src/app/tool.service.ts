@@ -12,23 +12,7 @@ export class ToolService {
   public windowresize = new EventEmitter();
 
   constructor(private router: Router) {
-    this.detectWindowClient();
-    this.resize();
-  }
 
-  detectWindowClient() {
-    this.windowHeight = window.innerHeight;
-    this.windowWidth = window.innerWidth;
-  }
-
-  getWindowClient() {
-    return { height: this.windowHeight, width: this.windowWidth };
-  }
-
-  resize() {
-    window.addEventListener('resize', (event) => {
-      this.windowresize.next(event);
-    });
   }
 
 }

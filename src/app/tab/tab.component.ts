@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, HostListener, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, HostListener, ElementRef, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToolService } from '../tool.service';
 @Component({
@@ -21,14 +21,6 @@ export class TabComponent implements OnInit {
   constructor(private toolservice: ToolService, private el: ElementRef) { }
 
   ngOnInit() {
-    let { height } = this.toolservice.getWindowClient();
-    this.el.nativeElement.style.minHeight = height + 'px';
-    this.toolservice.windowresize.subscribe(
-      (r) => {
-        this.el.nativeElement.style.minHeight = r.target.innerHeight + 'px';
-      },
-      (err) => { console.log(err) },
-      () => { console.log('complete.') }
-    );
+
   }
 }
