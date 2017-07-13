@@ -1,11 +1,10 @@
+.icon
+  img(src="assets/img/no_authorize_mountain.jpg")
+  .display
+    img(src="assets/img/displayphoto.jpg")
 .item#home([class.selected]="contains('home')",(click)="tabClick($event)",routerLinkActive="active", routerLink="home") 主頁
-.title 管理員
-.item#concert([class.selected]="contains('concert')",(click)="tabClick($event)") 音樂會管理
-.item#member([class.selected]="contains('member')",(click)="tabClick($event)") 成員管理
-.item#scoresheet([class.selected]="contains('scoresheet')",(click)="tabClick($event)") 樂譜管理
-.title 夥伴們
-.item#myscore([class.selected]="contains('myscore')",(click)="tabClick($event)") 樂譜來
-.item#mycalendar([class.selected]="contains('mycalendar')",(click)="tabClick($event)") 行事曆
-.item#myconcert([class.selected]="contains('myconcert')",(click)="tabClick($event)") 找檔期
+.title 樂譜管理
+.item#scoresheet([class.selected]="contains('scoresheet')",(click)="tabClick($event)",routerLinkActive="active", routerLink="updatescore") 新增樂譜
+.item#all([class.selected]="contains('all')",(click)="tabClick($event)",routerLinkActive="active", routerLink="viewallscore") 查看樂譜
 .title 設定
 .item#setting([class.selected]="contains('setting')",(click)="tabClick($event)") 改個資料

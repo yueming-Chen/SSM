@@ -3,7 +3,7 @@
   display: flex;
   box-sizing: border-box;
   .slide {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(0, 0, 0, 0.4);
     overflow-y: scroll;
     margin: 0.4em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -16,7 +16,7 @@
       margin-right: 10px;
       padding-bottom: 5px;
       color: white;
-      border-bottom: 1px solid #888;
+      border-bottom: 2px solid #ddd;
       box-sizing: border-box;
       .head {
         background: #E5D650;
@@ -54,25 +54,25 @@
       .dot {
         width: 14px;
         height: 14px;
-        background: black;
+        background: white;
         margin-bottom: 0px;
         border-radius: 50%;
       }
       .line {
         height: 20px;
-        width: 4px;
-        background: black;
-        &.first {
-          border-top-left-radius: 42%;
-          border-top-right-radius: 42%;
-        }
-        &.last {
-          border-bottom-left-radius: 42%;
-          border-bottom-right-radius: 42%;
-        }
+        width: 2px;
+        background: white; // &.first {
+        //   border-top-left-radius: 42%;
+        //   border-top-right-radius: 42%;
+        // }
+        // &.last {
+        //   border-bottom-left-radius: 42%;
+        //   border-bottom-right-radius: 42%;
+        // }
       }
     }
     .content {
+      color: white;
       display: flex;
       align-items: center;
     }
@@ -86,7 +86,7 @@
     background: none;
     .head {
       color: white;
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(0, 0, 0, 0.2);
       padding: 4px;
       padding-left: 1em;
       font-size: 1em;
@@ -96,12 +96,12 @@
       justify-content: center;
       font-size: 2.5em;
       padding: 5px;
-      background: rgba(255, 255, 255, 0.4);
+      background: rgba(0, 0, 0, 0.4);
       &.normal {
-        color: #3E78B2;
+        color: #BCD0C7;
       }
       &.danger {
-        color: #FF6B35;
+        color: #DD403A;
       }
     }
     .foot {
@@ -110,7 +110,7 @@
       padding: 4px;
       padding-left: 1em;
       font-size: 0.7em;
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(0, 0, 0, 0.2);
       display: flex;
       justify-content: flex-end;
       padding-right: 1em;

@@ -1,16 +1,23 @@
 @import './colours';
 ym-tab {
   min-height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-left: 0.4em;
   background: #5A5353;
   .icon {
-    padding: 0.5em;
     img {
-      width: 4em;
-      height: 4em;
+      width: 100%;
+    }
+    .display {
+      img {
+        position: absolute;
+        border-radius: 50%;
+        width: 3.3em; // height: 30%
+        left: 1em;
+        top: 4em;
+      }
     }
   }
   .title {
@@ -23,6 +30,7 @@ ym-tab {
     font-size: 0.8em;
     padding: 1em;
     color: white;
+    outline: none;
     transition: color ease-in 0.3s;
     &:hover {
       color: #333;
