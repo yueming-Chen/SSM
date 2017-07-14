@@ -4,7 +4,7 @@
     img(src="assets/img/displayphoto.jpg")
 .item#home([class.selected]="contains('home')",(click)="tabClick($event)",routerLinkActive="active", routerLink="home") 主頁
 .title 樂譜管理
-.item#scoresheet([class.selected]="contains('scoresheet')",(click)="tabClick($event)",routerLinkActive="active", routerLink="updatescore") 新增樂譜
+.item#scoresheet([class.selected]="contains('scoresheet')",(click)="tabClick($event)",routerLinkActive="active", routerLink="createscore") 新增樂譜
 .item#all([class.selected]="contains('all')",(click)="tabClick($event)",routerLinkActive="active", routerLink="viewallscore") 查看樂譜
 .title 設定
 .item#setting([class.selected]="contains('setting')",(click)="tabClick($event)") 改個資料

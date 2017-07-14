@@ -1,0 +1,56 @@
+.section
+  .slide.flex-1#concert
+    .title 
+      .head 
+      p 新增樂譜
+    .List
+      .upblur
+      form.form
+        .row
+          .label 樂譜名稱
+          input.input()
+        .row
+          .label 作曲家
+          input.input()
+        .row
+          .label 編曲者
+          input.input
+        .row
+          .label 樂曲時間
+          input.typenum(type="string",placeholder="ex:1:10:20")
+        .row
+          .label 借閱狀況
+          .toggle((click)="borrowClick = !borrowClick",[class.click]="borrowClick")
+            .round()
+        .row
+          .label 樂曲風格
+          select.input
+            option(disabled,selected) --選擇樂曲風格--
+            option 拉丁
+            option 西班牙風情
+        .row
+          .label 選擇用譜
+          input(type="file")
+        .preview
+          //- 這邊加入ngif，如果顯現才出現
+          .label 預覽
+          .container
+            ng-template(ngFor="",let-item="",[ngForOf]="items",let-i="index")
+              .scoreitem
+                .remove
+                  .up
+                  .down
+      .foot
+        .button 提交
+        .button.cancel 取消
+          
+        
+
+        //- 上傳電子譜 缺譜狀況 樂曲時間(需要組一個時間的表格) 樂曲風格 
+        //- 預覽介面 hover會做出放大功用 刪除譜 改變普順序
+        //- 1.第一次選擇
+        //- 2.挑選不要或傳錯的
+        //- 3.第二次上傳
+        //- 4.以拖拉的方式拖曳到想要的順序的位置
+        //- 版本2提供上傳pdf，但不提供預覽功用，而且強制轉黨的失敗不支援恢復pdf
+        //- 預覽跑版需要修正

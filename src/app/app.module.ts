@@ -15,15 +15,17 @@ import { LoginComponent } from './login/login.component';
 import { AuthenticationService } from './_service/authentication-service.service';
 import { TodolistComponent } from './todolist/todolist.component';
 import { DatePipe } from '@angular/common';
+import { CreateScoreComponent } from './create-score/create-score.component';
 const routeConfig: Routes = [
   { path: 'home', component: HomeComponent, },
   { path: 'updatescore', component: UpdateScoreComponent, },
+  { path: 'createscore', component: CreateScoreComponent, },
   { path: 'editscore', component: EditScoreComponent, },
   { path: 'viewallscore', component: ViewAllScoreComponent, },
   { path: 'setting', component: SettingComponent, },
   { path: 'login', component: LoginComponent, },
   { path: 'todolist', component: TodolistComponent, },
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/createscore', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 @NgModule({
@@ -37,7 +39,8 @@ const routeConfig: Routes = [
     ViewAllScoreComponent,
     SettingComponent,
     LoginComponent,
-    TodolistComponent
+    TodolistComponent,
+    CreateScoreComponent
   ],
   imports: [
     FormsModule,
