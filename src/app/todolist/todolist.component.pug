@@ -1,0 +1,59 @@
+.section
+  .slide.flex-1.card
+    .head 未辦事項
+    .content.normal 6
+    .foot 觀看詳細
+  .slide.flex-1.card
+    .head 已完成
+    .content.normal 16
+    .foot 觀看詳細
+  .slide.flex-1.card
+    .head 今日日期
+    .content.normal {{today | date:'medium'}}
+    .foot 變更格式
+.section
+  .slide.flex-1#concert
+    .title 
+      .head 
+      p 待辦事項
+    .List
+      .upblur
+      .item
+        .tag.complete
+        .dateTime 8/5 10:00
+        .content 大口吃飯
+        .showEdit 
+          .icon.first 
+            img(src="assets/img/check.png")
+          .icon.second 
+            img(src="assets/img/edit.png")
+          .icon.third 
+            img(src="assets/img/star.png")
+          .icon.forth 
+            img(src="assets/img/remove.png")
+      .item
+        .tag.yet
+        .dateTime 8/6 10:00
+        .content 用力洗澡
+        .showEdit 
+          .icon.first 
+            img(src="assets/img/check.png")
+          .icon.second 
+            img(src="assets/img/edit.png")
+          .icon.third 
+            img(src="assets/img/star.png")
+          .icon.forth 
+            img(src="assets/img/remove.png")
+      .item
+        .tag.urgant
+        .dateTime 8/7 10:00
+        .content 拼命睡覺
+        .showEdit 
+          .icon.first 
+            img(src="assets/img/check.png")
+          .icon.second 
+            img(src="assets/img/edit.png")
+          .icon.third 
+            img(src="assets/img/star.png")
+          .icon.forth 
+            img(src="assets/img/remove.png")

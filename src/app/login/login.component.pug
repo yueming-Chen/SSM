@@ -1,0 +1,10 @@
+.content
+  .container
+    .head
+      p 帳號登入
+    .account
+      input(placeholder="account",type="text",[(ngModel)]="account")
+    .password
+      input(placeholder="Password",type="password",[(ngModel)]="password")
+    .login
+      img.loginbutton(src="assets/img/login.png",(click)="login()")

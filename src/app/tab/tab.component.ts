@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, HostListener, ElementRef, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ToolService } from '../tool.service';
+import { ToolService } from '../_service/tool.service';
 @Component({
   selector: 'ym-tab',
   templateUrl: './tab.component.pug',
