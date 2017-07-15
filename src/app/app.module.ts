@@ -16,6 +16,7 @@ import { AuthenticationService } from './_service/authentication-service.service
 import { TodolistComponent } from './todolist/todolist.component';
 import { DatePipe } from '@angular/common';
 import { CreateScoreComponent } from './create-score/create-score.component';
+import { DraggableDirective } from './draggable-directive.directive';
 const routeConfig: Routes = [
   { path: 'home', component: HomeComponent, },
   { path: 'updatescore', component: UpdateScoreComponent, },
@@ -40,7 +41,8 @@ const routeConfig: Routes = [
     SettingComponent,
     LoginComponent,
     TodolistComponent,
-    CreateScoreComponent
+    CreateScoreComponent,
+    DraggableDirective
   ],
   imports: [
     FormsModule,

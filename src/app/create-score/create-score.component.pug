@@ -36,7 +36,7 @@
           .label 預覽
           .container
             ng-template(ngFor="",let-item="",[ngForOf]="scoreitems",let-i="index")
-              .scoreitem([style.backgroundImage]='item.url',style="background-size:cover")
+              .scoreitem([style.backgroundImage]='item.url',style="background-size:cover",[id]="i")
                 .remove((click)="remove(item.index)")
                   .up
                   .down
