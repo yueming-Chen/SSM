@@ -30,14 +30,14 @@
             option 西班牙風情
         .row
           .label 選擇用譜
-          input(type="file")
+          input(type="file",(change)="uploadNewScore($event)",multiple)
         .preview
           //- 這邊加入ngif，如果顯現才出現
           .label 預覽
           .container
-            ng-template(ngFor="",let-item="",[ngForOf]="items",let-i="index")
-              .scoreitem
-                .remove
+            ng-template(ngFor="",let-item="",[ngForOf]="scoreitems",let-i="index")
+              .scoreitem([style.backgroundImage]='item.url',style="background-size:cover")
+                .remove((click)="remove(item.index)")
                   .up
                   .down
       .foot
@@ -54,3 +54,4 @@
         //- 4.以拖拉的方式拖曳到想要的順序的位置
         //- 版本2提供上傳pdf，但不提供預覽功用，而且強制轉黨的失敗不支援恢復pdf
         //- 預覽跑版需要修正
+        //- 點一下要放大
