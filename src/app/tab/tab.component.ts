@@ -9,7 +9,7 @@ import { ToolService } from '../_service/tool.service';
 })
 
 export class TabComponent implements OnInit {
-  private selected: string = 'home';
+  private selected: string = 'todolist';
   contains(index) {
     return (index === this.selected) ? true : false;
   }

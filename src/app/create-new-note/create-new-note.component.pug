@@ -2,18 +2,18 @@
   .slide.flex-1#concert
     .title 
       .head 
-      p 設定個人資料
+      p 新增待辦事項
     .List
       .upblur
       form.form
         .row
-          .label 密碼
-          .button 修改密碼
+          .label 事件名稱
+          input.input([(ngModel)]="name",required)
         .row
-          .label 名稱
-          input.input(type="string",required,value="陳約銘")
+          .label 選擇日期與時間
+          input.input(type="datetime-local",[(ngModel)]="date",required)
         .row
-          .label 性別
+          .label 是否為特別重要
           .toggle((click)="borrowClick = !borrowClick",[class.click]="borrowClick",required)
             .round()
         .row
@@ -36,18 +36,7 @@
                 .remove((click)="remove(item.index)")
                   .up
                   .down
-.section
-  .slide.flex-1#concert
-    .title 
-      .head 
-      p 再次確認密碼
-    .List
-      .upblur
-      form.form
-        .row
-          .label 再次輸入密碼
-          input.input([(ngModel)]="name",required)
       .foot
-        .button((click)="submit()") 修改
+        .button((click)="submit()") 提交
         .button.cancel 取消
           

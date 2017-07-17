@@ -17,6 +17,7 @@ import { TodolistComponent } from './todolist/todolist.component';
 import { DatePipe } from '@angular/common';
 import { CreateScoreComponent } from './create-score/create-score.component';
 import { DraggableDirective } from './draggable-directive.directive';
+import { CreateNewNoteComponent } from './create-new-note/create-new-note.component';
 const routeConfig: Routes = [
   { path: 'home', component: HomeComponent, },
   { path: 'updatescore', component: UpdateScoreComponent, },
@@ -26,7 +27,8 @@ const routeConfig: Routes = [
   { path: 'setting', component: SettingComponent, },
   { path: 'login', component: LoginComponent, },
   { path: 'todolist', component: TodolistComponent, },
-  { path: '', redirectTo: '/createscore', pathMatch: 'full' },
+  { path: 'createnewitem', component: CreateNewNoteComponent },
+  { path: '', redirectTo: '/createnewitem', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 @NgModule({
@@ -42,7 +44,8 @@ const routeConfig: Routes = [
     LoginComponent,
     TodolistComponent,
     CreateScoreComponent,
-    DraggableDirective
+    DraggableDirective,
+    CreateNewNoteComponent
   ],
   imports: [
     FormsModule,

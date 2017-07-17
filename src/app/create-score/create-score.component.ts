@@ -37,12 +37,10 @@ export class CreateScoreComponent implements OnInit {
 
   setDraggable(index) {
     let target = String(index);
-    console.log(target);
     setTimeout(() => {
 
       this.scoreitem = document.getElementById(target);
       this.mouseDown = Rx.Observable.fromEvent(this.scoreitem, 'mousedown');
-      console.log(this.scoreitem);
       this.mouseDown
         .map(e => this.mouseMove.takeUntil(this.mouseUp))
         .concatAll()
