@@ -16,26 +16,6 @@
           .label 性別
           .toggle((click)="borrowClick = !borrowClick",[class.click]="borrowClick",required)
             .round()
-        .row
-          .label 事件緊迫度
-          select.input([(ngModel)]="urgent",required)
-            option(disabled,selected) --選擇緊迫度--
-            option 沒事
-            option 普通
-            option 夭壽
-            option 真的夭壽
-        .row
-          .label 選擇用譜
-          input(type="file",(change)="uploadNewScore($event)",multiple,required)
-        .preview
-          //- 這邊加入ngif，如果顯現才出現
-          .label 預覽
-          .container
-            ng-template(ngFor="",let-item="",[ngForOf]="listitem",let-i="index")
-              .scoreitem([style.backgroundImage]='item.url',style="background-size:cover",[id]="i")
-                .remove((click)="remove(item.index)")
-                  .up
-                  .down
 .section
   .slide.flex-1#concert
     .title 
@@ -46,7 +26,7 @@
       form.form
         .row
           .label 再次輸入密碼
-          input.input([(ngModel)]="name",required)
+          input.input([(ngModel)]="name")
       .foot
         .button((click)="submit()") 修改
         .button.cancel 取消

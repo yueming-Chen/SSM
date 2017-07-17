@@ -175,22 +175,21 @@
   width: 60px;
   height: 30px;
   border-radius: 50px;
-  background: white;
+  background: #4062BB;
   .round {
     position: relative;
     top: 2px;
     left: 2px;
-    background: black;
+    background: white;
     height: 26px;
     width: 26px;
     border-radius: 50%;
     transition: background .8s, left .5s;
   }
   &.click {
-    background: black;
+    background: #F45B69;
     .round {
       left: 30px;
-      background: #dff;
     }
   }
 }

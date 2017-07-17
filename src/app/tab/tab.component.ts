@@ -9,6 +9,7 @@ import { ToolService } from '../_service/tool.service';
 })
 
 export class TabComponent implements OnInit {
+  public settingDisplay: boolean = false;
   private selected: string = 'todolist';
   contains(index) {
     return (index === this.selected) ? true : false;
