@@ -1,4 +1,5 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 @Component({
@@ -45,8 +46,11 @@ export class CreateNewNoteComponent implements OnInit {
       .map((val, index) => { val.index = index; return val });
   }
 
-  submit() {
-
+  submit(userForm: NgForm) {
+    console.log(userForm);
+    console.log('Name:' + userForm.controls['name'].value);
+    console.log('Form Valid:' + userForm.valid);
+    console.log('Form Submitted:' + userForm.submitted);
   }
 
 }

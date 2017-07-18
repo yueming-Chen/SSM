@@ -5,20 +5,20 @@
       p 新增待辦事項
     .List
       .upblur
-      form.form
+      form.form(#userForm="ngForm",(ngSubmit)="submit(userForm)")
         .row
           .label 事件名稱
-          input.input([(ngModel)]="name",required)
+          input.input([(ngModel)]="name",name="name",required)
         .row
           .label 選擇日期與時間
-          input.input(type="datetime-local",[(ngModel)]="date",required)
+          input.input(type="datetime-local",name="date",[(ngModel)]="date",required)
         .row
           .label 是否為特別重要
-          .toggle((click)="borrowClick = !borrowClick",[class.click]="borrowClick",required)
+          .toggle((click)="borrowClick = !borrowClick",[class.click]="borrowClick")
             .round()
         .row
           .label 事件緊迫度
-          select.input([(ngModel)]="urgent",required)
+          select.input([(ngModel)]="urgent",name="urgent",required)
             option(disabled,selected) --選擇緊迫度--
             option 沒事
             option 普通
@@ -29,14 +29,14 @@
           input(type="file",(change)="uploadNewScore($event)",multiple,required)
         .preview
           //- 這邊加入ngif，如果顯現才出現
-          .label 預覽
+          .label 預覽s
           .container
             ng-template(ngFor="",let-item="",[ngForOf]="listitem",let-i="index")
               .scoreitem([style.backgroundImage]='item.url',style="background-size:cover",[id]="i")
                 .remove((click)="remove(item.index)")
                   .up
                   .down
-      .foot
-        .button((click)="submit()") 提交
-        .button.cancel 取消
+        .foot
+          button.button(type="submit") 提交
+          .button.cancel 取消
           
