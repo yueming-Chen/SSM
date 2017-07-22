@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
+import { DraggableDirective } from '../draggable-directive.directive';
 import * as Rx from 'rxjs';
-
+declare var process;
 @Component({
   selector: 'app-create-score',
   templateUrl: './create-score.component.pug',
@@ -18,7 +19,7 @@ export class CreateScoreComponent implements OnInit {
   public scorename: string = '';
   public scoreitems = [];
   constructor(private domSanitizer: DomSanitizer) {
-
+    console.log(process.env.NODE_ENV);
   }
 
   ngOnInit() {
