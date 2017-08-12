@@ -162,6 +162,7 @@ export class DraggableDirective implements AfterViewInit {
     };
     let x = event.x;
     let y = event.y;
+    console.log(x, y, 'x y');
     x = this.oriDomX + (x - this.oriMouseX);
     y = this.oriDomY + (y - this.oriMouseY);
     this.x = x - x % 5;

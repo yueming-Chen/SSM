@@ -36,30 +36,6 @@ export class CreateScoreComponent implements OnInit {
     this.fileread($event);
   }
 
-  setDraggable(index) {
-    let target = String(index);
-    setTimeout(() => {
-
-      this.scoreitem = document.getElementById(target);
-      this.mouseDown = Rx.Observable.fromEvent(this.scoreitem, 'mousedown');
-      this.mouseDown
-        .map(e => this.mouseMove.takeUntil(this.mouseUp))
-        .concatAll()
-        .withLatestFrom(this.mouseDown, (move: any, down: any) => {
-          return {
-            x: this.validValue(move.clientX - down.offsetX, window.innerWidth - 320, 0),
-            y: this.validValue(move.clientY - down.offsetY, window.innerHeight - 180, 0)
-          }
-        })
-        .subscribe(pos => {
-          this.scoreitem.style.top = pos.y + 'px';
-          this.scoreitem.style.left = pos.x + 'px';
-        });
-    }, 30);
-
-
-  }
-
   fileread(inputValue) {
     let file: File[] = inputValue.target.files;
     for (let index in file) {
@@ -68,7 +44,7 @@ export class CreateScoreComponent implements OnInit {
         let myReader: FileReader = new FileReader();
         myReader.onloadend = function (e) {
           this.scoreitems.push({ index: this.scoreitems.length + 1, url: this.domSanitizer.bypassSecurityTrustStyle('url(' + myReader.result + ')') });
-          this.setDraggable(index);
+
         }.bind(this);
         myReader.readAsDataURL(val);
       }

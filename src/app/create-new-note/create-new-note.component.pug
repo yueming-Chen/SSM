@@ -26,13 +26,14 @@
             option 真的夭壽
         .row
           .label 選擇用譜
-          input(type="file",(change)="uploadNewScore($event)",multiple,required)
+          input#fileuploader(type="file",(change)="uploadNewScore($event)",multiple,required,name="fileuploader")
         .preview
           //- 這邊加入ngif，如果顯現才出現
           .label 預覽s
           .container
             ng-template(ngFor="",let-item="",[ngForOf]="listitem",let-i="index")
-              .scoreitem([style.backgroundImage]='item.url',style="background-size:cover",[id]="i")
+              .scoreitem(style="background-size:cover",[id]="i")
+                //- [style.backgroundImage]='item.url',
                 .remove((click)="remove(item.index)")
                   .up
                   .down

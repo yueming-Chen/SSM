@@ -1,1 +1,20 @@
-p  view-all-score works!
+.section
+  .slide.flex-1#concert
+    .title 
+      .head 
+      p 查看樂譜
+    .List
+      .upblur
+      form.form(#userForm="ngForm",(ngSubmit)="submit(userForm)")
+        .row(style="display:none")
+          .label 選擇用譜
+          input#fileuploader(type="file",(change)="uploadNewScore($event)",multiple,required,name="fileuploader")
+        .preview
+          //- 這邊加入ngif，如果顯現才出現
+          .label
+          .container
+            .scoreitem([style.backgroundImage]='item.url',style="background-size:cover",[id]="i")
+              .remove((click)="remove(item.index)")
+                .up
+                .down
+              .score-title beethoven no.5

@@ -1,11 +1,11 @@
 .section {
-  padding: 0.2em;
+  padding: 0.4em;
   display: flex;
   box-sizing: border-box;
   .slide {
     background: rgba(0, 0, 0, 0.4);
     overflow-y: scroll;
-    margin: 0.4em;
+    margin: 1.5em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     .title {
       display: flex;

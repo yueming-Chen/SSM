@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { DndModule } from 'ng2-dnd';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -29,7 +30,7 @@ const routeConfig: Routes = [
   { path: 'login', component: LoginComponent, },
   { path: 'todolist', component: TodolistComponent, },
   { path: 'createnewitem', component: CreateNewNoteComponent },
-  { path: '', redirectTo: '/createscore', pathMatch: 'full' },
+  { path: '', redirectTo: '/todolist', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
 
@@ -52,7 +53,8 @@ const routeConfig: Routes = [
   imports: [
     FormsModule,
     BrowserModule,
-    RouterModule.forRoot(routeConfig)
+    RouterModule.forRoot(routeConfig),
+    DndModule.forRoot(),
   ],
   providers: [ToolService, AuthenticationService],
   bootstrap: [AppComponent]
