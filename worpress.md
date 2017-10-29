@@ -5,6 +5,8 @@
 ### 入門介紹
 A "LAMP" stack is a group of open source software that is typically installed together to enable a server to host dynamic websites and web apps. This term is actually an acronym which represents the Linux operating system, with the Apache web server. The site data is stored in a MySQL database, and dynamic content is processed by PHP.
 
+`LAMP`這個系統是一個開放軟體的群組，他特別為安裝在去能夠啟動伺服器去開啟一個動態網站與網陸應用程式。這個專有名詞是真正的arcronym在linux作業系統中。與阿帕契伺服器，這個網站資料會儲存在MySQL資料庫，藉由php產生動態的內容
+
 In this guide, we'll get a LAMP stack installed on an Ubuntu 14.04 Droplet. Ubuntu will fulfill our first requirement: a Linux operating system.
 
 ### 先了解
@@ -53,7 +55,7 @@ $ sudo apt-get install mysql-server php-mysql
 First, we need to tell MySQL to create its database directory structure where it will store its information. You can do this by typing:
 
 ```
-$sudo mysql_install_db
+$ sudo mysql_install_db
 ```
 如果遇到db需要`specify`的話，需要輸入以下指令
 
@@ -156,8 +158,9 @@ $ mysql -u root -p
 First, we can create a separate database that WordPress can control. You can call this whatever you would like, but I will be calling it wordpress because it is descriptive and simple. Enter this command to create the database:
 
 ```
-> CREATE DATABASE wordpress;
+> CREATE DATABASE your_db_name;
 ```
+> your_db_name在此處，就取一個你自己喜歡的名字吧！
 > 每一個sql的指令，後頭都需要有個分號去做結尾，就如同c語言一樣。
 
 Every MySQL statement must end in a semi-colon (;), so check to make sure this is present if you are running into any issues.
@@ -171,6 +174,7 @@ I am going to call the new account that I'm making wordpressuser and will assign
 ```
 
 > 記住，password中要符合我們在前置作業中，設定密碼模組中的條件，如果覺得太麻煩可以直接把`mysql_secure`刪除，但是並不推薦這樣做。
+> wordpressuser這個是要自己設定的帳號，在後頭會需要輸入，輸入完要確定自己記下來看
 
 At this point, you have a database and a user account, each made specifically for WordPress. However, these two components have no relationship yet. The user has no access to the database.
 
@@ -201,7 +205,7 @@ $ cd ~
 $ wget http://wordpress.org/latest.tar.gz
 $ tar xzvf latest.tar.gz
 $ sudo apt-get update
-$ sudo apt-get install php7.0-gd php-libssh
+$ sudo apt-get install php7.0-gd php-ssh2
 ```
 
 ### 步驟三 為wordpress做設定
@@ -304,7 +308,7 @@ sudo chown -R demo:www-data *
 First, let's manually create the uploads directory beneath the wp-content directory at our document root. This will be the parent directory of our content:
 
 ```
-$ mkdir /var/www/html/wp-content/uploads
+$ sudo mkdir /var/www/html/wp-content/uploads
 ```
 
 We have a directory now to house uploaded files, however the permissions are still too restrictive. We need to allow the web server itself to write to this directory. We can do this by assigning group ownership of this directory to our web server, like this:
@@ -331,12 +335,13 @@ http://server_domain_name_or_IP
 
 ### Q1:什麼我的ssh就只有私鑰，難道要自己設定去用嗎？
 
-> 安中`openssh`，把密碼ssh打開就可以了
+> 安裝`openssh`，把密碼ssh打開就可以了
 
 ### Q2:無法安裝更新，會出現it didn't locate specify directory
 
 > 只需要在`wp-config.php`中，加入`define('fs_file','direct')`即可！
+> 這邊可以直接繞過ftp
 
 ### Q3:乾你老師，我家了反而出現另外一個錯誤，會顯示存取被拒
 
-> 親愛的，雖然說懶人包很濃縮，幾乎可以讓不會linux的人使用，不過還是去學一下會比較好，權限最簡單就是設定`chmod 777`
+> 親愛的，雖然說懶人包很濃縮，幾乎可以讓不會linux的人使用，不過還是去學一下會比較好，權限最簡單就是進到`/var/www/html中`設定`chmod 777 -R ./`
