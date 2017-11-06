@@ -25,3 +25,5 @@
     <div [class.class1]="true" [style.width]="200">...</div>
 </div>
 ```
+
+這一次沒有什麼多餘的說明，但這個`class`的用法，在以後會很常用，在加入class非常的方便，只需要變數就能操控！`object`可以自由地做操控多量的class，之後class的預設，我們在介紹`directive`與`component`會再介紹，並且教學`host`的用法。

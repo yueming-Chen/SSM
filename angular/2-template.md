@@ -4,7 +4,7 @@
 
 我們以最簡單的說法，就是讓原本的html，可以看懂我們程式中的變數與函式，好比說我在我的程式碼中設定了名為`name`的變數，並且賦予值為`rach`，要讓他顯現出來，我們只需要在html中，使用下列程式碼：
 
-```ts
+```typescript
 public name = 'Rach';
 ```
 ```html
@@ -16,8 +16,8 @@ public name = 'Rach';
 
 接下來我們做比較完整的應用，我們要將ts中的變數，綁定至我們的`html`中，這邊跟初代angularJS用法一樣呢！
 
-```ts
-// demo.component.tsw
+```typescript
+// demo.component.ts
 import { Component,Input } from '@angular/core';
 
 @Component({

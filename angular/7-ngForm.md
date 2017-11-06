@@ -2,6 +2,8 @@
 
 angular把form這一塊整合的非常好，不只整合好了submit，驗證也包含在裡頭，這一次的範例是沒有驗證的實例。
 
+`forms`在商業的應用很多，後台的應用更多，填資料、登入之類的，都可以用angular提供的forms來做掉，我們用最簡單提供的`formcontrol`來實現。
+
 ```ts
 import {Component} from '@angular/core';
 import {NgForm} from '@angular/forms';
@@ -28,3 +30,5 @@ export class SimpleFormComp {
   }
 }
 ```
+
+當一切都可以從同一個表單元件做控制，事情就不會那麼複雜了，將多個簡單簡單的應用整合在一起，會很複雜，有form來做這些整合，事情會變簡單很多。
