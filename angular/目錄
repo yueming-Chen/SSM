@@ -1,0 +1,22 @@
+1 installation
+2 template
+3 ngif
+4 ngfor
+5 class and style
+6 event trigger
+7 ngform
+8 hostlistener hostbinding
+
+@angular aot/jit
+
+component
+directive
+pipe
+injectable
+@input/@output
+animations
+router
+ngmodule
+service
+httpclient
+template & data binding
