@@ -1,3 +1,4 @@
+declare var Rx;
 import { Component } from '@angular/core';
 import { ToolService } from './_service/tool.service';
 import { AuthenticationService } from './_service/authentication-service.service';

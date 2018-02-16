@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
-import * as Rx from 'rxjs';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-create-new-note',
   templateUrl: './create-new-note.component.pug',
@@ -20,24 +20,24 @@ export class CreateNewNoteComponent implements OnInit {
 
   public simpleDrop: any = null;
   public scoreitem: any;
-  private mouseDown: Rx.Observable<any>;
-  private mouseUp: Rx.Observable<any>;
-  private mouseMove: Rx.Observable<any>;
+  private mouseDown: Observable<any>;
+  private mouseUp: Observable<any>;
+  private mouseMove: Observable<any>;
 
   constructor(private domSanitizer: DomSanitizer) {
 
   }
 
   ngOnInit() {
-    this.mouseUp = Rx.Observable.fromEvent(document, 'mouseup');
-    this.mouseMove = Rx.Observable.fromEvent(document, 'mousemove');
+    this.mouseUp = Observable.fromEvent(document, 'mouseup');
+    this.mouseMove = Observable.fromEvent(document, 'mousemove');
   }
 
   setDraggable(index) {
     let target = String(index);
     setTimeout(() => {
       this.scoreitem = document.getElementById(target);
-      this.mouseDown = Rx.Observable.fromEvent(this.scoreitem, 'mousedown');
+      this.mouseDown = Observable.fromEvent(this.scoreitem, 'mousedown');
       this.mouseDown
         .map(e => this.mouseMove.takeUntil(this.mouseUp))
         .concatAll()

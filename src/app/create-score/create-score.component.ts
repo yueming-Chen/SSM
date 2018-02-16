@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { DraggableDirective } from '../draggable-directive.directive';
-import * as Rx from 'rxjs';
+import { Observable } from 'rxjs';
 declare var process;
 @Component({
   selector: 'app-create-score',
@@ -11,9 +11,9 @@ declare var process;
 })
 export class CreateScoreComponent implements OnInit {
   private scoreitem: any;
-  private mouseDown: Rx.Observable<any>;
-  private mouseUp: Rx.Observable<any>;
-  private mouseMove: Rx.Observable<any>;
+  private mouseDown: Observable<any>;
+  private mouseUp: Observable<any>;
+  private mouseMove: Observable<any>;
   private borrowClick: boolean = false;
   private cover = 'cover';
   public scorename: string = '';
@@ -23,8 +23,8 @@ export class CreateScoreComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.mouseUp = Rx.Observable.fromEvent(document, 'mouseup');
-    this.mouseMove = Rx.Observable.fromEvent(document, 'mousemove');
+    this.mouseUp = Observable.fromEvent(document, 'mouseup');
+    this.mouseMove = Observable.fromEvent(document, 'mousemove');
 
   }
 
